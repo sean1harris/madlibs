@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Madlibs</title>
+<style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        h1 {
+            text-align: Left;
+            margin-top: 20px;
+            color: #456;
+        }
+
+        form {
+            width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #444;
+        }
+    </style>
+	</head>
+
+	<body>
+    <form id="myForm">
+            <label for="adj">Adjective:</label>
+            <input type="text" id="adj" name="adj"><br><br>
+            <label for="nat">Nationality:</label>
+            <input type="text" id="nat" name="nat"><br><br>
+            <label for="person">Person:</label>
+            <input type="text" id="person" name="person"><br><br>
+            <label for="adj1">Adjective:</label>
+            <input type="text" id="adj1" name="adj1"><br><br>           
+            <label for="chooseAdj">Choose an adjective:</label><br>
+            <select id="chooseAdj">
+                <option value="gross">gross</option>
+                <option value="yummy">yummy</option>
+                <option value="ridicoulous">ridicoulous</option>
+                <option value="omniscient">omniscient</option>
+                <option value="wealthy">wealthy</option>
+  </select>
+  <br>
+            <label for="chooseNoun">Choose an noun:</label><br>
+            <select id="chooseNoun">
+                <option value="hat">hat</option>
+                <option value="shoe">shoe</option>
+                <option value="bag">bag</option>
+                <option value="car">car</option>
+                <option value="water">water</option>
+  </select>
+  <br>
+  <br>
+  <label for="adj2">Select an adjective:</label>
+  <input type="radio" id="salty" name="adj2" value="salty">
+  <label for="salty">salty</label>
+  <input type="radio" id="sweet" name="adj2" value="sweet">
+  <label for="sweet">sweet</label>
+  <br>
+  <br>
+            <label for="adj3">Adjective:</label>
+            <input type="text" id="adj3" name="adj3"><br><br>
+            <label for="pNoun">Plural Noun:</label>
+            <input type="text" id="pNoun" name="Pnoun"><br><br>
+            <label for="noun">Noun:</label>
+            <input type="text" id="noun" name="noun"><br><br>
+            -->
+<input type="submit" value="Submit">
+</form>
+
+<div id="formContents"></div>
+		<script>
+        
+         var form = document.getElementById("myForm");
+    form.addEventListener("submit", function(event){
+        event.preventDefault();
+        var adj = document.getElementById("adj").value;
+        var nat = document.getElementById("nat").value;
+        var person = document.getElementById("person").value;
+        var adj1 = document.getElementById("adj1").value;
+        var chooseAdj = document.getElementById("chooseAdj").value;
+        var chooseNoun = document.getElementById("chooseNoun").value;
+        var adj2 = document.querySelector('input[name="adj2"]:checked').value;
+        var adj3 = document.getElementById("adj3").value;
+        var pNoun = document.getElementById("pNoun").value;
+        var noun = document.getElementById("noun").value;
+    
+    var formContents = document.getElementById("formContents")
+;    formContents.innerHTML = " Pizza was invented by a " + adj + " " + nat + " chef named " + person + " . To make a pizza, you need to take a lump of " + adj1 + " ,and make a thin, round " + chooseAdj + " " + chooseNoun + " .Then you cover it with " + adj2 + " sauce " + adj3 + " cheese, and fresh chopped " + pNoun + " . Then you have to bake it in a very hot " + noun + " . ";
+    });
+
+		</script>
+	</body>
+</html>
